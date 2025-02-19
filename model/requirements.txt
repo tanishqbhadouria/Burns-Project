@@ -6,4 +6,5 @@ opencv-python
 tensorflow
 keras
 requests
+python-multipart
 python-dotenv

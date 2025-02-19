@@ -33,7 +33,7 @@ def query(payload):
 # model = keras.models.load_model("Ai714")
 # model = tf.keras.models.load_model("Ai714")  
 # model.save("Ai714.keras")  # Save in Keras 3 format
-model = keras.models.load_model("Ai714.h5")
+model = keras.models.load_model("Ai714.h5", include_optimizer=False)
 
 
 
@@ -100,7 +100,5 @@ async def predict_image(name: str,file: UploadFile = File(...)):
 # if __name__ == '__main__':
 #     uvicorn.run(app, host='127.0.0.1', port=8000)
 
-
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))
-    uvicorn.run(app, host="0.0.0.0", port=port)    
+    uvicorn.run(app, host="0.0.0.0", port=8000)
