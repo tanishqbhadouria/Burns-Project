@@ -7,6 +7,7 @@ from io import BytesIO
 import keras
 import uvicorn
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import tensorflow as tf
 # from pydantic import BaseModel
 app = FastAPI()
@@ -33,7 +34,7 @@ def query(payload):
 # model = keras.models.load_model("Ai714")
 # model = tf.keras.models.load_model("Ai714")  
 # model.save("Ai714.keras")  # Save in Keras 3 format
-model = keras.models.load_model("Ai714.h5", include_optimizer=False)
+model = keras.models.load_model("Ai714.h5")
 
 
 
@@ -100,5 +101,7 @@ async def predict_image(name: str,file: UploadFile = File(...)):
 # if __name__ == '__main__':
 #     uvicorn.run(app, host='127.0.0.1', port=8000)
 
+port = int(os.environ.get("PORT", 8000))  # Get Render-assigned port
+
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=port)
