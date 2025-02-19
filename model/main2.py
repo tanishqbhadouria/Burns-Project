@@ -31,8 +31,10 @@ def query(payload):
 
 
 # model = keras.models.load_model("Ai714")
-model = tf.keras.models.load_model("Ai714")  
-model.save("Ai714.h5", save_format="h5") 
+# model = tf.keras.models.load_model("Ai714")  
+# model.save("Ai714.keras")  # Save in Keras 3 format
+model = keras.models.load_model("Ai714.h5")
+
 
 
 def read_imagefile(file) -> Image.Image:
