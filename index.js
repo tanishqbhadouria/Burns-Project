@@ -6,12 +6,11 @@ import FormData from "form-data";
 import multer from "multer"
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import path from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
-
-const app=express();
-const port=3000;
+const app = express();
+const port = process.env.PORT || 3000;
 
 app.get('/',(req,res)=>{
     res.render('index.ejs');
@@ -19,17 +18,11 @@ app.get('/',(req,res)=>{
 
 let data = new FormData();
 
-// app.use(bodyParser.urlencoded({extended:true}));
-// app.use(bodyParser.json());
 app.use(express.json());
 
 app.set('view engine', 'ejs');
-// app.set("views", path.resolve("/views"));
 
-app.use('/public', express.static('public'));
-
-
-
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 let code;
 app.get('/check',(req,res)=>{
@@ -76,34 +69,10 @@ app.post('/done',(req,res)=>{
   console.log(data);
   res.render('contact.ejs',{ });
 })
-    
-// let config = {
-//           method: 'post',
-//           maxBodyLength: Infinity,
-//           url: 'http://13.48.136.54:8000/api/api-code/',
-//           headers: { 
-//             'Authorization': 'Bearer e4a19872-caf9-448f-ad3d-17f26e5d32dd', 
-//             ...data.getHeaders()
-//           },
-//           data : data
-//     };
-
-
-//     axios.post('http://13.48.136.54:8000/api/api-code/',data,config)
-// .then((response) => {
-//         console.log(JSON.stringify(response.data));
-//         code=JSON.stringify(response.data);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-//     console.log(code);
-
-//multer code
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      return cb(null, "D:/start/uploads")
+      return cb(null, path.join(__dirname, "uploads"))
     },
     filename: function (req, file, cb) {
     return cb(null, `${Date.now()}-${file.originalname}`)
@@ -124,7 +93,7 @@ const storage = multer.diskStorage({
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: `http://127.0.0.1:8000/predict/?name=${req.body.newItem}`,
+      url: 'https://burns-project.onrender.com/predict/?name=' + req.body.newItem,
       headers: { 
         ...data.getHeaders()
       },
@@ -142,6 +111,11 @@ const storage = multer.diskStorage({
   });
  
 });
-app.listen(port,()=>{
-    console.log(`server is running at ${port} `)
-})
+
+if (!fs.existsSync(path.join(__dirname, 'uploads'))) {
+    fs.mkdirSync(path.join(__dirname, 'uploads'));
+}
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
