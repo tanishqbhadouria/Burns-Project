@@ -14,6 +14,9 @@ import requests
 
 import os
 
+
+
+
 API_URL = "https://api-inference.huggingface.co/models/google/gemma-7b"
 HF_TOKEN = os.getenv("HF_TOKEN")  # Get token from environment variable
 headers = {"Authorization": f"Bearer {HF_TOKEN}"}
@@ -89,5 +92,10 @@ async def predict_image(name: str,file: UploadFile = File(...)):
 
 
     # Get the port number from the environment variable if available
-if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+# if __name__ == '__main__':
+#     uvicorn.run(app, host='127.0.0.1', port=8000)
+
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)    
