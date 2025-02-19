@@ -77,29 +77,29 @@ app.post('/done',(req,res)=>{
   res.render('contact.ejs',{ });
 })
     
-let config = {
-          method: 'post',
-          maxBodyLength: Infinity,
-          url: 'http://13.48.136.54:8000/api/api-code/',
-          headers: { 
-            'Authorization': 'Bearer e4a19872-caf9-448f-ad3d-17f26e5d32dd', 
-            ...data.getHeaders()
-          },
-          data : data
-    };
+// let config = {
+//           method: 'post',
+//           maxBodyLength: Infinity,
+//           url: 'http://13.48.136.54:8000/api/api-code/',
+//           headers: { 
+//             'Authorization': 'Bearer e4a19872-caf9-448f-ad3d-17f26e5d32dd', 
+//             ...data.getHeaders()
+//           },
+//           data : data
+//     };
 
 
-    axios.post('http://13.48.136.54:8000/api/api-code/',data,config)
-.then((response) => {
-        console.log(JSON.stringify(response.data));
-        code=JSON.stringify(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-    console.log(code);
+//     axios.post('http://13.48.136.54:8000/api/api-code/',data,config)
+// .then((response) => {
+//         console.log(JSON.stringify(response.data));
+//         code=JSON.stringify(response.data);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+//     console.log(code);
 
-
+//multer code
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
