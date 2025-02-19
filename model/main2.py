@@ -7,6 +7,7 @@ from io import BytesIO
 import keras
 import uvicorn
 import os
+import tensorflow as tf
 # from pydantic import BaseModel
 app = FastAPI()
 
@@ -29,7 +30,9 @@ def query(payload):
 
 
 
-model = keras.models.load_model("Ai714")
+# model = keras.models.load_model("Ai714")
+model = tf.keras.models.load_model("Ai714")  
+model.save("Ai714.h5", save_format="h5") 
 
 
 def read_imagefile(file) -> Image.Image:
