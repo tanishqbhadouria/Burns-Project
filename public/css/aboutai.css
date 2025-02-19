@@ -1,0 +1,52 @@
+.AI_heading{
+    text-align: center;
+    padding-top: 3rem;
+   font-family:monospace;
+   font-weight: bold;
+}
+.para{
+    height: 13rem;
+    width: 70rem;
+    
+padding-left: 15rem;
+padding-top: 3rem;
+font-weight: 300;
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: medium;
+}
+ .AI_image{
+    height: 15rem;
+    width: 15rem;
+margin-right: 4rem;
+margin-left: 2rem;
+}
+.deep_learning_model1{
+    height: 20rem;
+    width: 40rem;
+    margin-left: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+} 
+
+.box1{
+    padding-top: 12rem;
+  
+   }
+
+.box2{
+    padding-top: 5rem;
+  
+}
+
+.deep_learning_model2{
+    height: 20rem;
+    width: 40rem;
+    margin-left: 21.5rem;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+} 

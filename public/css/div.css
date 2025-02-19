@@ -1,0 +1,41 @@
+
+.div_box{
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 90%;
+    margin:3rem auto;
+    padding-top: 5rem;
+
+}
+
+.button_div {
+    display: flex;
+    flex-direction: column; 
+margin-top: 6rem;
+  }
+
+  .hero-content {
+    margin-bottom: 2px;  
+  }
+
+/* .hero-content button{
+    display: inline-block;
+    background-color: #52b788;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.hero-content button:hover{
+    background-color: #ff6347;
+    transform: scale(1.1);
+} */
+.hero-content img{
+    max-height: 4rem;
+    max-width: 4rem;
+}

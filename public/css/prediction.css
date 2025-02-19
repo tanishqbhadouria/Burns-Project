@@ -1,0 +1,60 @@
+.heading{
+    text-size-adjust: 60rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.detect,.r,.recommend{
+    /* text-size-adjust: 45rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.r,.recommend{
+ font-weight: 300;
+ font-size: large;
+ padding: 21px;
+}
+
+.terms{
+    font-size: 14px;
+    font-weight: 100;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.main{
+    border: 2px solid burlywood;
+    border-radius: 1.5%;
+}
+body{
+    padding: 25px;
+}
+
+    
+.card-img-top{
+  
+  width: 8rem;
+  height: auto;
+}
+.doctor_image{
+display: flex;
+justify-content: center;
+}
+
+.card-body{
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.d{
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+
+}

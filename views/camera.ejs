@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align content at the top */
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 600px) {
+            button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Camera Options</h1>
+        <button onclick="openCamera()">Open Webcam</button>
+        <button onclick="closeCamera()" style="display:none;">Close Webcam</button>
+        <button onclick="takeSnapshot()">Take Snapshot</button>
+        <button onclick="downloadSnapshot()" style="display:none;">Download Snapshot</button>
+        <br>
+        <video id="video" style="display:none;"></video>
+        <canvas id="canvas" width="400" height="300" style="display:none;"></canvas>
+    </div>
+
+    <script>
+        let videoStream;
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+
+        function openCamera() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    video.srcObject = stream;
+                    video.play();
+                    videoStream = stream;
+                    video.style.display = 'block';
+                    document.querySelector('button:nth-child(1)').style.display = 'none';
+                    document.querySelector('button:nth-child(2)').style.display = 'block';
+                    document.querySelector('button:nth-child(4)').style.display = 'block';
+                })
+                .catch(err => console.error('Error accessing webcam:', err));
+        }
+
+        function closeCamera() {
+            if (videoStream) {
+                videoStream.getTracks().forEach(track => track.stop());
+                video.srcObject = null;
+                video.style.display = 'none';
+                document.querySelector('button:nth-child(1)').style.display = 'block';
+                document.querySelector('button:nth-child(2)').style.display = 'none';
+                document.querySelector('button:nth-child(4)').style.display = 'none';
+            }
+        }
+
+        function takeSnapshot() {
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            canvas.style.display = 'block';
+            document.querySelector('button:nth-child(3)').style.display = 'none';
+            document.querySelector('button:nth-child(4)').style.display = 'block';
+        }
+
+        function downloadSnapshot() {
+            const snapshot = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = snapshot;
+            link.download = 'snapshot.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>

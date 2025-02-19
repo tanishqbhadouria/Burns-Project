@@ -1,0 +1,9 @@
+.nav_brand{
+    color: blue;
+    /* text-decoration-color: blue;
+    color-scheme: blue;
+    text-decoration: blue; */
+  }
+  .nav_button{
+    padding-right: 1rem;
+  }

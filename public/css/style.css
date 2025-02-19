@@ -1,0 +1,266 @@
+.heading h1{
+    color: #4535d8;
+    font-size: 3rem;
+    text-align: center;
+    max-width: 100%;
+    padding: 30px;
+}
+
+.upper{
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    padding-top: 3rem;
+}
+
+h2{
+    
+    font-size: 3rem;
+    text-align: center;
+    max-width: 100%;
+    padding: 30px;
+}
+
+/* new css */
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.page {
+    width: 100%;
+    height: 100vh;
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center;
+    position: relative; */
+} 
+
+.page1{
+    background-color: white;
+    /* width: 80vw;
+    position: relative;
+    height: 100vh;
+    /* display: flex;  */
+}
+
+
+
+ .img1{
+    /* width: 50%;
+    max-width: 30rem; */
+   position: relative;
+   
+   top: 5%;
+   left: 9%;
+    width: fit-content;
+    /* border: black solid 1px; */
+} 
+.main_image{
+    
+    width: fit-content;
+    max-width: 90%;
+    mix-blend-mode: multiply;
+    
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+     overflow: hidden;
+    
+}
+
+
+.detail-first{
+     display:flex ;
+     flex-direction: column; 
+     align-items: center; 
+     position: relative;
+     width: fit-content;
+     text-align: center;
+     top: 31%;
+     left: 5%;
+    /* border: black solid 1px; */
+    font-size: 0.5%;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow: hidden; 
+}
+ 
+  .iconn{
+mix-blend-mode: multiply;
+}
+ .icon-image{
+    /* background-color: rgb(186, 186, 185); */
+    /* border: green solid 3px;  */
+     /* padding: 2%; */
+    /* border-radius: 50%; */
+     width:8% ;
+    position: fixed;
+    top: 90%;
+    left: 92%; 
+     
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+} 
+
+.research-img{
+    padding: 2%;
+
+   width: 80%;
+   
+}
+
+
+.info-contact{
+    /* border: black solid 1px; */
+    
+    position: relative;
+    width: 80%;
+    top: 35%;
+    left: 15%;
+}
+
+
+.form-bootstrap{
+    position: relative;
+    /* border: black solid 1px; */
+    width: 70%;
+    padding: 2%;
+    /* margin: 2%; */
+    height: auto;
+      top: 35%;
+      left: 13%;
+    border-radius: 2%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+   background-color: #e4e2e2;
+}
+
+.btn-primary{
+    position: relative;
+    left: 35%;
+}
+  .box{
+    height: 10rem;
+width:10rem;
+align-items: center;
+text-align: center;
+margin-top: 1.5rem;
+margin-bottom: 1.5rem;
+}
+
+.image_box{
+   align-items: center;
+   border: none;
+   text-align: center;
+   transition: 1s;
+}
+.image_box:hover{
+    transform: scale(1.15);
+}
+p{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.journey_box{
+height: 18rem;
+max-width:100%;
+align-items: center;
+text-align: center;
+}
+
+.text_box{
+  margin-top: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.journey_div{
+text-align: center;
+}
+
+.faq_image{
+    height: 40rem;
+    width: 100%;
+}
+
+/* footer */
+
+footer{
+    margin-top: 15px;
+}
+.foot-panel1{
+    height: 50px;
+    /* color: white; */
+    /* background-color: #3fa34d; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.foot-panel2{
+     background-color:rgb(226, 240, 233); 
+    /* color: white; */
+    height: 215px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+ul{
+    margin-top: 20px;
+}
+ul a{
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    /* color: #dddddd; */
+}
+ul p{
+    font-weight: 700;
+}
+/* foot-panel3 */
+
+.foot-panel3{
+    height: 70px;
+    /* background-color: #3fa34d; */
+    /* color: white; */
+    border: 0.5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foot-logo{
+    background-image: url("logo.jpeg");
+    background-size: cover;
+    height: 50px;
+    width: 100px;
+}
+/*foot- panel4*/
+.foot-panel4{
+    background-color:black;
+    color: #f3f3f3;
+    height: 50px;
+    font-size: 0.50rem;
+    text-align: center;
+
+}
+.pages{
+    padding-top:10px;
+}
+.copyright{
+    padding:3px;
+}
+
+.form-bootstrapp{
+    position: relative;
+    width: 70%;
+    padding: 2%;
+    left: 2rem;
+    padding: 1rem;
+    border-radius: 2%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(208, 208, 208);
+}
